@@ -1,5 +1,5 @@
  # Team is owner for all files in the repo
- *  @ketl/sample-application-devs
+ *  @ketl/hr-sampleproduct-devs
  
  # Specific user is owner of docs folder and all subfolders
- docs/  @ketl/content-writers 
+ docs/  @ketl/content-writers
