@@ -1,2 +1,2 @@
-# Sample-Application
-A sample application to show the features of GitHub
+# HR-SampleProduct-Api
+A web api application for the Human Resources department's Sample product to show the features of GitHub
