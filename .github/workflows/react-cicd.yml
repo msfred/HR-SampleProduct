@@ -13,7 +13,7 @@ jobs:
   # Build React app
   build:
     name: Build React app
-    uses: msfred/templates/.github/workflows/build-react.yml@main
+    uses: msfred/.github/workflows/build-react.yml@main
     with:
       project: MyReactApp
     secrets:
