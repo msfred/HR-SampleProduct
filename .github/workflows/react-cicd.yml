@@ -1,0 +1,26 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  # Build React app
+  build:
+    name: Build React app
+    uses: msfred/.github/workflows/build-react@main
+    with:
+      project: MyReactApp
+    secrets:
+      token: ${{ secrets.token }}
+
+  # DEV Deployment Job
+  deploy-dev:
+    name: Deploy to DEV
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Debug for the Depoly to DEV job
+        run: echo "Starting the deploy to dev job"
+
