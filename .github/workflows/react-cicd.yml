@@ -1,0 +1,29 @@
+name: React App - CI/CD Workflow
+
+on:
+  # Trigger when code committed to the main branch
+  push:
+    branches: [ main ]
+
+  # Trigger manually
+  workflow_dispatch:
+
+jobs:
+
+  # Build React app
+  build:
+    name: Build React app
+    uses: msfred/templates/.github/workflows/build-react.yml@main
+    with:
+      project: MyReactApp
+    secrets:
+      token: ${{ secrets.token }}
+
+  # DEV Deployment Job
+  deploy-dev:
+    name: Deploy to DEV
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Debug for the Depoly to DEV job
+        run: echo "Starting the deploy to dev job"
