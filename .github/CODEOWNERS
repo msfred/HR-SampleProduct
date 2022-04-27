@@ -2,5 +2,4 @@
 *  @msfred/hr-sampleproduct-developers
  
 # Specific user is owner of docs folder and all subfolders
-docs/  @msfred/hr-content-writers
-       
+docs/  @hr-content-writers
