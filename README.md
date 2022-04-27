@@ -18,3 +18,4 @@ GitHub will use and display these default files for any repository owned by the 
 * repository root folder
 * _.github_ folder
 * _docs_ folder
+
