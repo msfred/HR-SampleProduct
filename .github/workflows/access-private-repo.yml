@@ -1,0 +1,29 @@
+name: Access Private Repository
+
+on:
+  # Trigger manually
+  workflow_dispatch:
+
+jobs:
+  access-private-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Debug Before
+        id: debug_before
+        run: |
+          echo Display workspace ($GITHUB_WORKSPACE) content
+          dir $GITHUB_WORKSPACE
+
+      - name: Checkout private repository
+        id: checkout_repo
+        uses: actions/checkout@v2
+        with:
+          repository: msfred/Workflow-Demos
+          path: imported
+
+      - name: Debug After
+        id: debug_after
+        run: |
+          echo Display workspace ($GITHUB_WORKSPACE) content
+          dir $GITHUB_WORKSPACE
