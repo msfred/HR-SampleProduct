@@ -17,7 +17,7 @@ jobs:
 
       - name: Generate app installation token
         id: github_app_token
-        uses: machine-learning-apps/actions-app-token@0.21
+        uses: machine-learning-apps/actions-app-token@master
         with:
           APP_PEM: ${{ secrets.GHA_APP_PK }}
           APP_ID: ${{ secrets.GHA_APP_ID }}
@@ -30,8 +30,21 @@ jobs:
           path: imported
           token: ${{ steps.github_app_token.outputs.app_token }}
 
+      - name: Star Wars Name
+        id: sw
+        uses: $GITHUB_WORKSPACE/imported/.github/actions/star-wars-name
+        with:
+          FirstName: Joesph
+          LastName: Biden
+          BirthCity: Scranton
+          MaidenName: Finnegan
+
+      - name: Display the Star Wars name
+        run: |
+          echo 'Joe Biden's Star Wars name: ${{steps.sw.outputs.StarWarsName}}'
+
       - name: Debug After
         id: debug_after
         run: |
           echo Display workspace $GITHUB_WORKSPACE content
-          dir $GITHUB_WORKSPACE
+          dir $GITHUB_WORKSPACE/imported
