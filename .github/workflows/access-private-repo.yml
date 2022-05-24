@@ -12,7 +12,7 @@ jobs:
       - name: Debug Before
         id: debug_before
         run: |
-          echo Display workspace ($GITHUB_WORKSPACE) content
+          echo Display workspace $GITHUB_WORKSPACE content
           dir $GITHUB_WORKSPACE
 
       - name: Checkout private repository
@@ -25,5 +25,5 @@ jobs:
       - name: Debug After
         id: debug_after
         run: |
-          echo Display workspace ($GITHUB_WORKSPACE) content
+          echo Display workspace $GITHUB_WORKSPACE content
           dir $GITHUB_WORKSPACE
