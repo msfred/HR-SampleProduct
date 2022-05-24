@@ -34,6 +34,9 @@ jobs:
         id: debug_after
         run: |
           echo Display workspace $GITHUB_WORKSPACE content
+          dir $GITHUB_WORKSPACE
+          echo ---
+          echo Display workspace $GITHUB_WORKSPACE/imported content
           dir $GITHUB_WORKSPACE/imported
 
 #      - name: Star Wars Name
