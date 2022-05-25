@@ -1,0 +1,18 @@
+name: Starter Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo "Hello this is a workflow template"
+
+      - name: Setup Vault
+        uses: innovationnorway/setup-vault@v1.0.3
