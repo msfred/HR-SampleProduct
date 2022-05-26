@@ -24,10 +24,15 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: ${{ matrix.environment }}
-      url: https://${{ matrix.environment }}.product.company.com
+      url: ${{ matrix.url }}
     strategy:
       matrix:
         environment: ['development', 'production']
+        include:
+          - environment: development
+            url: https://dev.hr-product.msfred.org
+          - environment: production
+            url: https://hr-product.msfred.com
     steps:
       - name: Debug step for the Depoly to ${{ matrix.environment }} job
         run: echo "Starting the deploy to ${{ matrix.environment }}"
