@@ -19,12 +19,15 @@ jobs:
     secrets:
       token: ${{ secrets.token }}
 
-  # DEV Deployment Job
-  deploy-dev:
-    name: Deploy to DEV
+  deploy:
+    name: Deploy to ${{ matrix.environment }}
     runs-on: ubuntu-latest
-    environment: Development
-
+    environment:
+      name: ${{ matrix.environment }}
+      url: ${{ secret.url }}
+    strategy:
+      matrix:
+        environment: ['development', 'production']
     steps:
-      - name: Debug for the Depoly to DEV job
-        run: echo "Starting the deploy to dev job"
+      - name: Debug step for the Depoly to ${{ matrix.environment }} job
+        run: echo "Starting the deploy to ${{ matrix.environment }}"
