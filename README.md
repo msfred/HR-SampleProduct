@@ -1,4 +1,7 @@
 # HR-SampleProduct-Api
+
+[![React App - CI/CD Workflow](https://github.com/msfred/HR-SampleProduct-Api/actions/workflows/react-cicd.yml/badge.svg)](https://github.com/msfred/HR-SampleProduct-Api/actions/workflows/react-cicd.yml)
+
 A web api application for the Human Resources department's Sample product to show the features of GitHub
 ---
 The repository's README.md file is a place where anyone new to the project can find high level information about the project, instructions for new developers on how to get started developing, or install the application.
