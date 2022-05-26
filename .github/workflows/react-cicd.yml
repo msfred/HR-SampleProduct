@@ -23,6 +23,7 @@ jobs:
   deploy-dev:
     name: Deploy to DEV
     runs-on: ubuntu-latest
+    environment: Development
 
     steps:
       - name: Debug for the Depoly to DEV job
