@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: ${{ matrix.environment }}
-      url: ${{ secret.url }}
+      url: ${{ secrets.url }}
     strategy:
       matrix:
         environment: ['development', 'production']
