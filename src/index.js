@@ -1,4 +1,4 @@
 // Placeholder for a javascript file
 export const index = () => {
-  return ''
+  console.log('index')
 }
