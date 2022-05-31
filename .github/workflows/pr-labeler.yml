@@ -13,6 +13,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    # Explicitly set permissions when environment/organization/repository sets to restrictive mode
+    permissions:
+      #actions: read|write|none
+      #checks: read|write|none
+      contents: read
+      #deployments: read|write|none
+      #discussions: read|write|none
+      #issues: read|write|none
+      metadata: read
+      #packages: read|write|none
+      #pages: read|write|none
+      pull-requests: write
+      #repository-projects: read|write|none
+      #security-events: read|write|none
+      #statuses: read|write|none
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
