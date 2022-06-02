@@ -22,7 +22,6 @@ jobs:
       #deployments: read|write|none
       #discussions: read|write|none
       #issues: read|write|none
-      metadata: read
       #packages: read|write|none
       #pages: read|write|none
       pull-requests: write
