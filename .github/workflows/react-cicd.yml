@@ -5,34 +5,29 @@ on:
   push:
     branches: [ main ]
 
+  pull_request:
+    branches: [ main ]
+
   # Trigger manually
   workflow_dispatch:
+
+env:
+  artifact-ui: ui
+  artifact-api: api
 
 jobs:
 
   # Build React app
-  build:
+  build-ui:
     name: Build React app
-    uses: msfred/.github/.github/workflows/build-react.yml@main
+    uses: msfred/templates/.github/workflows/build-react.yml@main
     with:
-      project: MyReactApp
-    secrets:
-      token: ${{ secrets.token }}
+      artifact: ${{ env.artifact-ui }}
 
-  deploy:
-    name: Deploy to ${{ matrix.environment }}
-    runs-on: ubuntu-latest
-    environment:
-      name: ${{ matrix.environment }}
-      url: ${{ matrix.url }}
-    strategy:
-      matrix:
-        environment: ['development', 'production']
-        include:
-          - environment: development
-            url: https://dev.hr-product.msfred.org
-          - environment: production
-            url: https://hr-product.msfred.com
-    steps:
-      - name: Debug step for the Depoly to ${{ matrix.environment }} job
-        run: echo "Starting the deploy to ${{ matrix.environment }}"
+  # Deploy React app
+  deploy-dev-ui:
+    name: Deploy to development
+    uses: msfred/templates/.github/workflows/deploy-webapp.yml@main
+    with:
+      artifact: ${{ env.artifact-ui }}
+      environment: development

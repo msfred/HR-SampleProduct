@@ -4,15 +4,15 @@ repo:
 
 # Add 'source' label to any change to files within the api or ui dir EXCEPT for the docs sub-folder
 source:
-- any: ['api/**/*', 'ui/**/*', '!**/docs/*']
+- any: [ 'api/**/*', 'ui/**/*', '!**/docs/*' ]
 
 # Add 'backend` label to any change to .net files
 backend:
-- any: ['api/**/*']
+- any: [ 'api/**/*' ]
 
 # Add 'frontend` label to any change to *.js files
 frontend:
-- any: ['**/*.js', 'ui/**/*']
+- any: [ 'ui/**/*', '**/*.js' ]
 
 # Add 'test' label to any change to *.spec.js files within the source dir
 test:
