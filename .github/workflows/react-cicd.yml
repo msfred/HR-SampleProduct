@@ -23,6 +23,7 @@ jobs:
     uses: msfred/templates/.github/workflows/build-react.yml@main
     with:
       artifact: $artifact
+      path: ui
 
   # Deploy React app
   deploy-dev-ui:
