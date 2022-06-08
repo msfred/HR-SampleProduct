@@ -22,7 +22,7 @@ jobs:
     name: Build React app
     uses: msfred/templates/.github/workflows/build-react.yml@main
     with:
-      artifact: $artifact
+      artifact: ${{ env.artifact }}
       path: ui
 
   # Deploy React app
