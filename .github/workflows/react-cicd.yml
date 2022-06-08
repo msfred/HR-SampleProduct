@@ -21,13 +21,13 @@ jobs:
     name: Build React app
     uses: msfred/templates/.github/workflows/build-react.yml@main
     with:
-      artifact: ${{ env.artifact }}
+      artifact: $artifact
 
   # Deploy React app
   deploy-dev-ui:
     name: Deploy to development
     uses: msfred/templates/.github/workflows/deploy-webapp.yml@main
     with:
-      artifact: ${{ env.artifact }}
+      artifact: $artifact
       environment: development
 
