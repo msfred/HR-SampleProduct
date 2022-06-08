@@ -11,10 +11,6 @@ on:
   # Trigger manually
   workflow_dispatch:
 
-env:
-  artifact: ui
-  webAppName: app-hrsampleproduct-ui
-
 jobs:
 
   # Build React app
@@ -31,6 +27,6 @@ jobs:
     needs: build-ui
     uses: msfred/templates/.github/workflows/deploy-webapp.yml@main
     with:
-      artifact: $artifact
+      artifact: ui
       environment: development
-      webAppName: $webAppName
+      webAppName: app-hrsampleproduct-ui
