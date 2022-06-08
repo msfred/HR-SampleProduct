@@ -1,22 +1,19 @@
 # Add 'repo' label to any root file changes
 repo:
-- '*'
+- any [ '*', '.github/**/*' ]
 
-# Add '@domain/core' label to any change within the 'core' package
-domain/core:
-- package/core/*
-- package/core/**/*
+# Add 'source' label to any change to files within the api or ui dir EXCEPT for the docs sub-folder
+source:
+- any: ['api/**/*', 'ui/**/*', '!**/docs/*']
+
+# Add 'backend` label to any change to .net files
+backend:
+- any: ['api/**/*']
+
+# Add 'frontend` label to any change to *.js files
+frontend:
+- any: ['**/*.js', 'ui/**/*']
 
 # Add 'test' label to any change to *.spec.js files within the source dir
 test:
-- src/**/*.spec.js
-
-# Add 'source' label to any change to src files within the source dir EXCEPT for the docs sub-folder
-source:
-- any: ['src/**/*', '!src/docs/*', 'ui/**/*']
-
-# Add 'frontend` label to any change to *.js files as long as the `main.js` hasn't changed
-frontend:
-- any: ['src/**/*.js', 'ui/**/*']
-  all: ['!src/main.js']
- 
+- any [ '**/*.spec.js' ]
