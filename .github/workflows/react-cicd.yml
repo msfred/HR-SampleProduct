@@ -30,4 +30,4 @@ jobs:
     with:
       artifact: $artifact
       environment: development
-
+      webAppName: app-hrsampleproduct-ui
