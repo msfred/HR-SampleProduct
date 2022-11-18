@@ -1,4 +1,4 @@
-name: React App - CI/CD Workflow
+name: React App - CI
 
 on:
   # Trigger when code committed to the main branch
@@ -11,10 +11,6 @@ on:
   # Trigger manually
   workflow_dispatch:
 
-env:
-  artifact-ui: ui
-  artifact-api: api
-
 jobs:
 
   # Build React app
@@ -22,12 +18,15 @@ jobs:
     name: Build React app
     uses: msfred/templates/.github/workflows/build-react.yml@main
     with:
-      artifact: ${{ env.artifact-ui }}
+      artifact: ui
+      path: ui
 
   # Deploy React app
   deploy-dev-ui:
     name: Deploy to development
+    needs: build-ui
     uses: msfred/templates/.github/workflows/deploy-webapp.yml@main
     with:
-      artifact: ${{ env.artifact-ui }}
+      artifact: ui
       environment: development
+      webAppName: app-hrsampleproduct-ui
